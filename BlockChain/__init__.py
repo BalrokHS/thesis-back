@@ -1,1 +1,1 @@
-from Blockchain import Blockchain
+from blockchain import Blockchain
