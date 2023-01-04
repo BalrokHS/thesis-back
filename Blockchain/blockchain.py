@@ -5,7 +5,7 @@ from Block import Block
 from Transaction import Transaction
 
 # The size is in bytes (1MB)
-MAX_BLOCK_SIZE = 2 ^ 20
+MAX_BLOCK_SIZE = pow(2, 20)
 
 
 class Blockchain:
@@ -25,7 +25,6 @@ class Blockchain:
     # Genesis Block Creation
     def create_genesis_block(self) -> None:
         genesis_block = Block(0, [], time(), "0")
-        genesis_block.hash = genesis_block.current_hash
         self.chain.append(genesis_block)
 
     # Adds a block
