@@ -1,16 +1,11 @@
 from flask import Flask
-
-from Blockchain import Blockchain
+from flask_restful import Api
+from resources import BlockChainResource
 
 app = Flask(__name__)
-blockchain = Blockchain()
-blockchain.create_genesis_block()
+api = Api(app)
 
-
-@app.route('/')
-def hello_world():
-    return str(blockchain.chain_length)
-
+api.add_resource(BlockChainResource, '/')
 
 if __name__ == '__main__':
     app.run()
