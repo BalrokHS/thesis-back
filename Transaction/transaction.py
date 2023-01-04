@@ -1,5 +1,5 @@
 class Transaction:
-    def __init__(self, sender: str, reciever: str, data):
+    def __init__(self, sender: str, receiver: str, data):
         self.sender = sender
-        self.reciever = reciever
+        self.receiver = receiver
         self.data = data
