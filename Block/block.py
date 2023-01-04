@@ -1,8 +1,8 @@
-import json
 import sys
 from hashlib import sha256
 
 from Transaction import Transaction
+from models import BlockSchema
 
 
 class Block:
@@ -15,7 +15,8 @@ class Block:
     # Generates a hash based on the current state of the block
     @property
     def current_hash(self) -> str:
-        block_string = json.dumps(self.__dict__, sort_keys=True)
+        block_string = BlockSchema().dumps(self)
+        print(block_string)
         return sha256(block_string.encode()).hexdigest()
 
     def add_transaction(self, tx: Transaction) -> None:
