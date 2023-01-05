@@ -1,2 +1,2 @@
-
 from .blockchain_resource import BlockChainResource
+from .security_node_resource import SecurityNodeResource
