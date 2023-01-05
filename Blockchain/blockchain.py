@@ -39,4 +39,4 @@ class Blockchain:
         if size + sys.getsizeof(tx) > MAX_BLOCK_SIZE:
             self.add_block()
 
-        self.last_block.transactions.append(tx)
+        self.last_block.add_transaction(tx)
