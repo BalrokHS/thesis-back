@@ -21,7 +21,8 @@ class BlockChainResource(Resource):
     def post(self):
         try:
             parsed_tx = TransactionSchema().loads(request.get_data())
-            tx = Transaction(request.host, parsed_tx.get("receiver"), parsed_tx.get("data"))
+            sender = request.host.split(":")[0]
+            tx = Transaction(sender, parsed_tx.get("receiver"), parsed_tx.get("data"))
             status_code, status_message = self.transmit_transaction_to_receiver(tx)
             if status_code == HTTPStatus.OK:
                 blockchain.add_transaction(tx)
