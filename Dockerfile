@@ -7,7 +7,7 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . $APP_HOME
 
-#---------------- Prepare the envirennment
+#---------------- Prepare the environnment
 RUN chmod +x boot.sh
 RUN conda env create --file environment.yml
 SHELL ["/bin/bash", "-c", "source activate thesis-env"]

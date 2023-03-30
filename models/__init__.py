@@ -1,2 +1,3 @@
 from .transaction_schema import TransactionSchema
 from .block_schema import BlockSchema
+from .transmit_transaction_schema import TransmitTransactionSchema
